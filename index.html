@@ -1,43 +1,62 @@
 ---
 layout: default
 title: Welcome To The Chess Castle!
+nav_id: nav-home
 ---
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-	<!-- Indicators -->
-	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-		<li data-target="#myCarousel" data-slide-to="2"></li>
-	</ol>
-	<div class="carousel-inner">
-		<div class="item active">
-			<div class="container">
-				<div><img src="images/slide1.jpg" height="300" /></div>
-				<div class="carousel-caption">
-					<p>"All I want to do, ever, is just play Chess."</p>
-					<h1>- Bobby Fischer</h1>
-				</div>
-			</div>
-		</div>
-		<div class="item">
-			<div class="container">
-				<div><img src="images/slide2.jpg" height="300" /></div>
-				<div class="carousel-caption">
-					<p>"Every Chess master was once a beginner"</p>
-					<h1>- Chernev</h1>
-				</div>
-			</div>
-		</div>
-		<div class="item">
-			<div class="container">
-				<div><img src="images/slide3.jpg" height="300" /></div>
-				<div class="carousel-caption">
-					<p>"The pupil wants not so much to learn, as to learn how to learn."<br/></p>
-					<h1>- Samuel Boden</h1>
-				</div>
-			</div>
+<style>
+.quote-section {
+	padding:50px;
+}
+.bqstart {
+	float: left;
+	height: 45px;
+	margin-top: -45px;
+	padding-top: 0;
+	margin-bottom: -50px;
+	font-size: 700%;
+	color: #000;
+ }
+
+ .bqend {
+	float: right;
+	height: 25px;
+	margin-top: -15px;
+	padding-top: 0;
+	font-size: 700%;
+	color: #000;
+ }
+ .quote {
+ 	padding-left: 25px;
+ 	font-size: 1.2em;
+ 	display:block
+ }
+ .author {
+ 	clear: both;
+	padding-top: 30px;
+	float: right;
+	font-size: 1.5em;
+	font-weight: bold;
+ }
+ blockquote {
+ 	padding: 0;
+	margin: 0;
+	border-left: none;
+}
+</style>
+<script src="{{ site.baseurl }}/js/quotes.js"></script>
+<div class="col-lg-12 content">
+	<h1 class="text-center">Welcome To The Chess Castle!</h1>
+	<div class="col-lg-4 col-lg-offset-4 quote-section">
+		<div>
+			<blockquote>
+				<span class="bqstart">&#8220;</span>
+				<span class="quote">Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.</span>
+				<span class="bqend">&#8221;</span>
+			</blockquote>
+			<div class="author"></div>
 		</div>
 	</div>
-	<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-	<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-</div><!-- /.carousel -->
+</div>
+<script>
+	nav_id = "{{ page.nav_id }}";
+</script>
