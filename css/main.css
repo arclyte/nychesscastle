@@ -1,3 +1,5 @@
+---
+---
 /*****************************************************************************/
 /*
 /* Common
@@ -13,7 +15,7 @@
 html, body { height: 100%; }
 
 body {
-  background:url('/nychesscastle/images/stock_chessboard.jpg') no-repeat center center;
+  background:url('{{ site.baseurl }}/images/stock_chessboard.jpg') no-repeat center center;
   background-size:cover;
   font: 13.34px Helvetica, Arial, sans-serif;
   font-size: small;

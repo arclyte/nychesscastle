@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Contact | Chess Castle
+nav_id: nav-contact
 ---
 
 <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.16.min.js"></script>
@@ -30,6 +31,8 @@ title: Contact | Chess Castle
 </div>
 <script type="text/javascript">
 $(document).ready(function() {
+	nav_id = "{{ page.nav_id }}";
+	
 	var ParseAppId = "KX1H6PTX2gxZIbvSVANWzaSUGSdDqGJkUmV3smrx";
 	var ParseJSID = "zSl8hztTYPmIeUhDDWz2BYC11IvMOp5UHBkZsLna";
 
