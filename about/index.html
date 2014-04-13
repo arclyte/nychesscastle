@@ -3,21 +3,33 @@ layout: default
 title: About Us | Chess Castle
 nav_id: nav-about
 ---
+<link rel="stylesheet" href="{{ site.baseurl }}/js/chessboardjs-0.3.0/css/chessboard-0.3.0.min.css">
+<script src="{{ site.baseurl }}/js/chessboardjs-0.3.0/js/chessboard-0.3.0.js"></script>
+<script src="{{ site.baseurl }}/js/chess.js/"></script>
 
 <div class="col-lg-12 content">
-	<h1>About Us</h1>
-	<p>
-		We believe that by using positive coaching, structured activities, and peer development, we will be able to provide outstanding chess instruction, camps and competitions in the Tri-State Area.
-	</p>
-	<p>
-		We offer:
-		<ul>
-			<li><a href="/nychesscastle/lessons/">Private Lessons/Coaching</a></li>
-			<li><a href="/nychesscastle/camp/">Summer Camps</a></li>
-			<li><a href="/nychesscastle/programs/">School Programs</a></li>
-			<li><a href="/nychesscastle/tournaments/">Tournaments</a></li>
-		</ul>
-	</p>
+	<div class="col-lg-6">
+		<h1>About Us</h1>
+		<p>
+			We believe that by using positive coaching, structured activities, and peer development, we will be able to provide outstanding chess instruction, camps and competitions in the Tri-State Area.
+		</p>
+		<p>
+			We offer:
+			<ul>
+				<li><a href="/nychesscastle/lessons/">Private Lessons/Coaching</a></li>
+				<li><a href="/nychesscastle/camp/">Summer Camps</a></li>
+				<li><a href="/nychesscastle/programs/">School Programs</a></li>
+				<li><a href="/nychesscastle/tournaments/">Tournaments</a></li>
+			</ul>
+		</p>
+	</div>
+	<div class="col-lg-6">
+		<div id="board1" style="width: 400px"></div>
+		<input type="button" id="startBtn" value="Start" />
+		<input type="button" id="clearBtn" value="Clear" />
+		<input type="button" id="randomBtn" value="Random Opening" />
+		<span id="opening"></span>
+	</div>
 </div>
 <script>
 	nav_id = "{{ page.nav_id }}";

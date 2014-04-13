@@ -1,4 +1,5 @@
 name: NY Chess Castle
 markdown: redcarpet
 pygments: true
+url: http:://jamesalday.com/nychesscastle
 baseurl: /nychesscastle
