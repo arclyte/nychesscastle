@@ -22,10 +22,21 @@ $(document).ready(function(){
 		$('#opening').hide();
 	});
 
-	$('#randomBtn').on('click', function(e) {
+	$('#openBtn').on('click', function(e) {
 		e.preventDefault();
 
-		var fen = findFen();
+		var fen = findFen('opening');
+
+		board.position(fen.fen, true);
+
+		$('#opening').html(fen.name);
+		$('#opening').show();
+	});
+
+	$('#puzzleBtn').on('click', function(e) {
+		e.preventDefault();
+
+		var fen = findFen('puzzle');
 
 		board.position(fen.fen, true);
 
@@ -34,8 +45,8 @@ $(document).ready(function(){
 	});
 });
 
-function findFen() {
-	var fens = [
+function findFen(type) {
+	var openings = [
 		{name: "Anderssen Opening", fen: "rnbqkbnr/pppppppp/8/8/8/P7/1PPPPPPP/RNBQKBNR b KQkq - 0 1"},
 		{name: "Bird Opening", fen: "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq f3 0 1"},
 		{name: "Bishop's Opening", fen: "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2"},
@@ -79,9 +90,58 @@ function findFen() {
 		{name: "Vienna Game", fen: "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2"},
 		{name: "Vienna Game, Vienna Gambit", fen: "r1bqkbnr/pppp1ppp/2n5/4p3/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq f3 0 3"},
 		{name: "Wade Defense", fen: "rn1qkbnr/ppp1pppp/3p4/8/3P2b1/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3"},
-		{name: "Zuketort Opening, Symmetrical Variation", fen: "rnbqkb1r/pppppppp/5n2/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 2 2"},
+		{name: "Zuketort Opening, Symmetrical Variation", fen: "rnbqkb1r/pppppppp/5n2/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 2 2"}
 		// {name: "", fen: ""},
 	];
+
+	var puzzles = [
+		{name: "Black Mates in 2.", fen: "5rk1/ppp2pbp/3p2p1/1q6/4r1P1/1NP1B3/PP2nPP1/R2QR2K b - - 0 1"},
+		{name: "Black Mates in 3.", fen: "2r3k1/6pp/p2p4/1p6/1p2P3/1PNK1bQ1/1BP3qP/R7 b - - 0 1"},
+		{name: "Black Mates in 3.", fen: "6k1/5ppp/p4r2/1p1Q4/3P1b2/2P1P1Pb/PP1Bq2P/R5K1 b - - 0 1"},
+		{name: "Black Mates in 3.", fen: "8/p1p5/2p3k1/2b1rpB1/7K/2P3PP/P1P2r2/3R3R b - - 0 1"},
+		{name: "Black to move and win.", fen: "2rr2k1/pb3pp1/4q2p/2pn4/2Q1P3/P4P2/1P3BPP/2KR2NR b - - 0 1"},
+		{name: "Black to move and win.", fen: "8/3R1p2/1p3k2/7b/2Pp3P/BP1K4/2P4r/8 b - - 0 1"},
+		{name: "Black to move and win.", fen: "r4rk1/pp4pp/5pn1/3q1R2/2nP2N1/2P1B3/P1Q3PP/R5K1 b - - 0 1"},
+		{name: "Black to move and win.", fen: "6k1/2R2p1p/5rp1/8/6P1/P2bRB2/1r5P/7K b - - 0 1"},
+		{name: "Black to move and win.", fen: "6k1/ppq3bp/2n2np1/5p2/2P2P2/4KBN1/PP5P/RQ6 b - - 0 1"},
+		{name: "Black to move and win.", fen: "5k2/3b2p1/1p4qp/p1pPp1p1/P1P1Pn2/2P5/2Q3PP/3BB1K1 b - - 0 1"},
+		{name: "Black to move and win.", fen: "6k1/1p3pb1/4p1p1/2p2p2/2PP1P1q/1P5P/rB1Q2P1/R5K1 b - - 0 1"},
+		{name: "Black to move and win.", fen: "2k5/p1p3p1/1bp5/6N1/1P6/2P1r2P/P1KN1rn1/R6R b - - 0 1"},
+		{name: "Black to move and win.", fen: "2krr3/ppp2p2/2b4p/6pN/2Pq4/3P4/P1P2QPP/R4RK1 b - - 0 1"},
+		{name: "White Mates in 2.", fen: "r5q1/pp1b1kr1/2p2p2/2Q5/2PpB3/1P4NP/P4P2/4RK2 w - - 0 1"},
+		{name: "White Mates in 3.", fen: "r7/3bb1kp/q4p1N/1pnPp1np/2p4Q/2P5/1PB3P1/2B2RK1 w - - 0 1"},
+		{name: "White Mates in 3.", fen: "8/2r1q2p/7k/2pR1Q2/4p2p/1P2P3/5PP1/6K1 w - - 0 1"},
+		{name: "White to move and win.", fen: "2rq1k1r/p3nppp/1p2pN2/nP1pP3/3P2P1/2R1QN2/5PKP/2R5 w - - 0 1"},
+		{name: "White to move and win.", fen: "r5k1/ppr2p2/6p1/3pP3/3P3Q/q2B1R1P/P5PK/8 w - - 0 1"},
+		{name: "White to move and win.", fen: "r1bqkb1r/pp1n1ppp/3pp3/4P3/3N4/2PB4/P1PBQPPP/R3K2R w - - 0 1"},
+		{name: "White to move and win.", fen: "2b3rk/4np1p/p6P/2r1qpQR/1pP1p3/4N3/PPB2PP1/1K1R4 w - - 0 1"},
+		{name: "White to move and win.", fen: "r3kn2/5q2/r3p2p/4Pp2/1Q3N1B/5P1P/1P6/6RK w - - 0 1"},
+		{name: "White to move and win.", fen: "3r1r1k/1b2N1p1/p2P1p1p/1p2n1q1/2p1PR2/8/PPB2QPP/3R3K w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "3qr2k/pbpp2pp/1p5N/3Q2b1/2P1P3/P7/1PP2PPP/R4RK1 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r1bq2k1/ppp2r1p/2np1pNQ/2bNpp2/2B1P3/3P4/PPP2PPP/R3K2R w KQ - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r1bk3r/1pp2ppp/pb1p1n2/n2P4/B3P1q1/2Q2N2/PB3PPP/RN3RK1 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r2q1k1r/ppp1n1Np/1bnpB2B/8/1P1pb1P1/2P4P/P4P2/R2Q1RK1 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r1b2rk1/ppp2p1p/1b1p1B2/5q1Q/2Bp4/2P5/PP3PPP/R3R1K1 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "1rqk3r/p1p1pppp/2Q1b3/3pN3/3P4/B7/P4PPP/b3R1K1 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r2k1b1Q/pppn3p/3p4/1B5n/5pb1/5N2/PPPP1qPP/RNBKR3 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r4r2/pQ3ppp/2np4/2bk4/5P2/6P1/PPP5/R1B1KB1q w Q - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r2q1k1r/ppp1bB1p/2np4/6N1/3PP1bP/8/PPP5/RNB2RK1 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "rn5r/pp1b2b1/1q1p3p/3nk1p1/3p4/3Q2P1/PPP1NR2/4R1K1 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r1b3nr/ppqk1Bbp/2pp4/4P1B1/3n4/3P4/PPP2QPP/R4RK1 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r4b1r/ppp1qb2/2np3p/5R2/3PP2k/4B1NP/PPP3K1/8 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r1b2Qnr/p1pk3p/1pnp4/6q1/2BPP3/8/PPP3PP/RN3RK1 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "rnbk3r/ppppb2p/3N1n2/7Q/4P3/2N5/PPPP3P/R1B1KB1q w Q - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r1b1kbnr/pp2qp2/1np4p/4P3/2B2BpN/2NQ1pP1/PPP4P/2KR3R w kq - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "rnb2k1r/ppp1qBpp/8/4N2Q/8/2n3b1/PPPP2K1/R1B2R2 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r1bk2nr/p2p1pNp/n2B4/1p1NP2P/6P1/3P1Q2/P1P1K3/q5b1 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "r1bk3b/1pppq3/2n3n1/1p2P1BQ/3P4/8/PPP3P1/5RK1 w - - 0 1"},
+		{name: "White to Move, Checkmate in 2.", fen: "rnbqr2k/ppppn1p1/1b5p/6NQ/2BPPB2/8/PPP3PP/RN3K1R w - - 0 1"}
+	];
 	
-	return fens[Math.floor(Math.random() * fens.length)];
+	if (type === "opening") {
+		data = openings;
+	} else if (type === "puzzle") {
+		data = puzzles;
+	}
+	return data[Math.floor(Math.random() * data.length)];
 }
