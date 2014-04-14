@@ -1,21 +1,24 @@
-var board_config = {
-	  draggable: true,
-	  dropOffBoard: 'trash',
-	  sparePieces: true
-	};
+var 
+	board,
+	board_config = {
+		draggable: true,
+		dropOffBoard: 'trash',
+		sparePieces: true
+	}
+;
 
 $(document).ready(function(){
-	var board1 = new ChessBoard('board1', board_config);
+	board = new ChessBoard('board', board_config);
 
 	$('#startBtn').on('click', function(e) {
 		e.preventDefault();
-		board1.start();
+		board.start();
 		$('#opening').hide();
 	});
 
 	$('#clearBtn').on('click', function(e) {
 		e.preventDefault();
-		board1.clear();
+		board.clear();
 		$('#opening').hide();
 	});
 
@@ -24,8 +27,7 @@ $(document).ready(function(){
 
 		var fen = findFen();
 
-		board_config.position = fen.fen;
-		board1 = new ChessBoard('board1', board_config);
+		board.position(fen.fen, true);
 
 		$('#opening').html(fen.name);
 		$('#opening').show();
