@@ -128,6 +128,9 @@ footer div {
 	font-size: 1.5em;
 	font-weight: bold;
  }
+ .chess-quote blockquote {
+	border: none;
+ }
  .quote-section blockquote {
  	padding: 0;
 	margin: 0;
