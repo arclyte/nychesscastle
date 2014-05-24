@@ -130,6 +130,7 @@ footer div {
  }
  .chess-quote blockquote {
 	border: none;
+	margin: 0 0 40px;
  }
  .quote-section blockquote {
  	padding: 0;
