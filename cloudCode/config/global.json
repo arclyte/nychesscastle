@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "Chess Castle Inc": {
+            "applicationId": "eCPxHtMJRComMLxlS2DI7xj0mcDB4hAGpoJ6DEns", 
+            "masterKey": "mmD6SzSZn1zmOIps6T5jX9Wi87meZVIXXxZPkLE7"
+        }, 
+        "_default": {
+            "link": "Chess Castle Inc"
+        }
+    }
+}
