@@ -16,15 +16,12 @@
 html, body { height: 100%; }
 
 body {
-  background:url('{{ site.baseurl }}/images/stock_chessboard.jpg') no-repeat center center fixed;
+  background:url('{{ site.baseurl }}/images/shutterstock_186121379_1024.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   
-  /*background:url('{{ site.baseurl }}/images/stock_chessboard.jpg') no-repeat center center;*/
-  /*background-size:cover;*/
-  /*-webkit-background-origin:border;*/
   font: 13.34px Helvetica, Arial, sans-serif;
   font-size: small;
 }
@@ -99,6 +96,12 @@ footer div {
 .quote-section {
 	padding:0 50px;
 }
+
+.quote-section .well {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
 .bqstart {
 	float: left;
 	height: 45px;
