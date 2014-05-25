@@ -442,7 +442,7 @@ function expandConfig() {
   if (cfg.hasOwnProperty('pieceTheme') !== true ||
       (typeof cfg.pieceTheme !== 'string' &&
        typeof cfg.pieceTheme !== 'function')) {
-    cfg.pieceTheme = '/nychesscastle/js/chessboardjs-0.3.0/img/chesspieces/wikipedia/{piece}.png';
+    cfg.pieceTheme = '/js/chessboardjs-0.3.0/img/chesspieces/wikipedia/{piece}.png';
   }
 
   // animation speeds
