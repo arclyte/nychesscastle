@@ -16,7 +16,7 @@
 html, body { height: 100%; }
 
 body {
-  background:url('{{ site.baseurl }}/images/shutterstock_186121379_1024.jpg') no-repeat center center fixed;
+  background:url('{{ site.url }}/images/shutterstock_186121379_1024.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
