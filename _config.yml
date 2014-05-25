@@ -2,4 +2,4 @@ name: NY Chess Castle
 markdown: redcarpet
 pygments: true
 url: http://nychesscastle.com/
-baseurl: /
+baseurl: 
