@@ -3,3 +3,7 @@ markdown: redcarpet
 pygments: true
 url: http://www.nychesscastle.com
 baseurl: 
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/jekyll/update/2014/01/20/welcome-to-jekyll.html"
