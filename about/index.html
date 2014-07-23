@@ -5,7 +5,7 @@ nav_id: nav-about
 ---
 <link rel="stylesheet" href="{{ site.url }}/js/chessboardjs-0.3.0/css/chessboard-0.3.0.min.css">
 <script src="{{ site.url }}/js/chessboardjs-0.3.0/js/chessboard-0.3.0.js"></script>
-<script src="{{ site.url }}/js/chess.js"></script>
+<script src="/js/chess.js"></script>
 
 <div class="col-lg-12 content">
 	<div class="col-lg-6">
@@ -25,11 +25,12 @@ nav_id: nav-about
 	</div>
 	<div class="col-lg-6">
 		<div id="board" style="width: 400px"></div>
-		<input type="button" id="startBtn" value="Start" />
-		<input type="button" id="clearBtn" value="Clear" />
-		<input type="button" id="openBtn" value="Random Opening" />
-		<input type="button" id="puzzleBtn" value="Random Puzzle" />
-		<span id="opening"></span>
+		<input type="button" id="start" class="btn btn-default" value="Start" />
+		<input type="button" id="clear" class="btn btn-default" value="Clear" />
+		<input type="button" id="opening"  class="btn btn-default" value="Random Opening" />
+		<input type="button" id="puzzle" class="btn btn-default" value="Random Puzzle" />
+		
+		<div id="fen-name"></div>
 	</div>
 </div>
 <script>
