@@ -34,41 +34,7 @@ $(document).ready(function(){
 			
 				break;
 		}
-	})
-
-	// $('#startBtn').on('click', function(e) {
-		// e.preventDefault();
-		// board.start();
-		// $('#opening').hide();
-	// });
-
-	// $('#clearBtn').on('click', function(e) {
-		// e.preventDefault();
-		// board.clear();
-		// $('#opening').hide();
-	// });
-
-	// $('#openBtn').on('click', function(e) {
-		// e.preventDefault();
-
-		// var fen = findFen('opening');
-
-		// board.position(fen.fen, true);
-
-		// $('#opening').html(fen.name);
-		// $('#opening').show();
-	// });
-
-	// $('#puzzleBtn').on('click', function(e) {
-	// 	e.preventDefault();
-
-	// 	var fen = findFen('puzzle');
-
-	// 	board.position(fen.fen, true);
-
-	// 	$('#opening').html(fen.name);
-	// 	$('#opening').show();
-	// });
+	});
 });
 
 function findFen(type) {
