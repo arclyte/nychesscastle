@@ -4,8 +4,11 @@ title: About Us | Chess Castle
 nav_id: nav-about
 ---
 <link rel="stylesheet" href="{{ site.url }}/js/chessboardjs-0.3.0/css/chessboard-0.3.0.min.css">
+
+<script src="/js/chess.min.js"></script>
 <script src="{{ site.url }}/js/chessboardjs-0.3.0/js/chessboard-0.3.0.js"></script>
-<script src="/js/chess.js"></script>
+<script src="/js/fens.json"></script>
+<script src="/js/about_chess.js"></script>
 
 <div class="col-lg-12 content">
 	<div class="col-lg-6">
@@ -29,6 +32,7 @@ nav_id: nav-about
 		<input type="button" id="clear" class="btn btn-default" value="Clear" />
 		<input type="button" id="opening"  class="btn btn-default" value="Random Opening" />
 		<input type="button" id="puzzle" class="btn btn-default" value="Random Puzzle" />
+		<input type="button" id="random" class="btn btn-default" value="Random Game (Computer)" />
 		
 		<div id="fen-name"></div>
 	</div>
